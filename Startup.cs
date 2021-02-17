@@ -28,8 +28,10 @@ namespace JustisBookstore
             services.AddControllersWithViews();
 
             services.AddDbContext<BookDbContext>(options => {
-                options.UseSqlServer(Configuration["ConnectionStrings: JustisBookstore"]);
+                options.UseSqlServer(Configuration["ConnectionStrings:JustisBookstore"]);
             });
+
+            services.AddScoped<IBookRepository, EFBookRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,6 +60,8 @@ namespace JustisBookstore
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            SeedData.EnsurePopulated(app);
         }
     }
 }

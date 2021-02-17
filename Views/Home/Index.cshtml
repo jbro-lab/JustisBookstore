@@ -1,8 +1,26 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    
 }
+@model IQueryable<Book>
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div class="container ">
+    <div class="card">
+        @foreach (Book book in Model)//displays all fav restaurants
+        {
+        <h3 class="card-header">@book.title <br /></h3>
+
+        <p class="card-body">
+            ISBN: @book.ISBN <br />
+            Author: @book.authorFirstName @book.authorMiddleName @book.authorLastName <br />
+            Publisher: @book.publisher <br /> Classification: @book.classification <br />
+            Category: @book.category <br /> Price: $@book.price
+        </p>
+
+
+        }
+    </div>
 </div>
