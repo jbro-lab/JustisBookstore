@@ -12,14 +12,14 @@ namespace JustisBookstore.Migrations
                 {
                     BookId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ISBN = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    title = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    authorFirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    authorMiddleName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    authorLastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    publisher = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    classification = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    category = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ISBN = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    authorFirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    authorMiddleName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    authorLastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    publisher = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    classification = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    category = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     price = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
