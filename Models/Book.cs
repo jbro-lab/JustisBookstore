@@ -8,7 +8,7 @@ namespace JustisBookstore.Models
 {
     public class Book
     {
-        [Key]
+        [Key]//makes BookId the Key
         public int BookId { get; set; }
         [RegularExpression(@"^\([\d]{3}\)-[\d]{9}$", ErrorMessage = "ISBN must be in ###-######### format")]
         [Required]
@@ -16,7 +16,7 @@ namespace JustisBookstore.Models
         [Required]
         public string title { get; set; }
         [Required]
-        public string authorFirstName { get; set; }
+        public string authorFirstName { get; set; }//name is split into three portions so that it's normalized
         [Required]
         public string authorMiddleName { get; set; }
         [Required]
@@ -24,7 +24,7 @@ namespace JustisBookstore.Models
         [Required]
         public string publisher { get; set; }
         [Required]
-        public string classification { get; set; }
+        public string classification { get; set; }//classification and category were split up
         [Required]
         public string category { get; set; }
         [Required]
@@ -32,7 +32,7 @@ namespace JustisBookstore.Models
 
         public Book()
         {
-            this.authorMiddleName = "";
+            this.authorMiddleName = "";//sets middlename to a defualt of ""
         }
     }
 }

@@ -13,6 +13,6 @@ namespace JustisBookstore.Models
 
         }
 
-        public DbSet<Book> Books { get; set; }
+        public DbSet<Book> Books { get; set; }//creates the Db
     }
 }

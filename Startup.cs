@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace JustisBookstore
 {
     public class Startup
-    {
+    {//for populating db
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -61,7 +61,7 @@ namespace JustisBookstore
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            SeedData.EnsurePopulated(app);
+            SeedData.EnsurePopulated(app);//populated database
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace JustisBookstore.Models
-{
+{//creates BookRepository
     public class EFBookRepository : IBookRepository
     {
         private BookDbContext _context;

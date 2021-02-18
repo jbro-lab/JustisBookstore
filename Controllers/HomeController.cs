@@ -23,7 +23,7 @@ namespace JustisBookstore.Controllers
 
         public IActionResult Index()
         {
-            return View(_repository.Books);
+            return View(_repository.Books);//passes book repository to Index view
         }
 
         public IActionResult Privacy()
