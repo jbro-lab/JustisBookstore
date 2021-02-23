@@ -28,7 +28,7 @@ namespace JustisBookstore
             services.AddControllersWithViews();
 
             services.AddDbContext<BookDbContext>(options => {
-                options.UseSqlServer(Configuration["ConnectionStrings:JustisBookstore"]);
+                options.UseSqlite(Configuration["ConnectionStrings:JustisBookstore"]);
             });
 
             services.AddScoped<IBookRepository, EFBookRepository>();
@@ -57,8 +57,11 @@ namespace JustisBookstore
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    "pagination", 
+                    "Books/{page}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapDefaultControllerRoute();
             });
 
             SeedData.EnsurePopulated(app);//populated database
