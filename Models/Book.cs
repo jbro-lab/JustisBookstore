@@ -29,6 +29,8 @@ namespace JustisBookstore.Models
         public string category { get; set; }
         [Required]
         public double price { get; set; }
+        [Required]
+        public int numPages { get; set; }
 
         public Book()
         {

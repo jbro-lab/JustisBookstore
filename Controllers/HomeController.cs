@@ -16,7 +16,7 @@ namespace JustisBookstore.Controllers
 
         private readonly IBookRepository _repository;
 
-        public int PageSize = 3;
+        public int PageSize = 5;
 
         public HomeController(ILogger<HomeController> logger, IBookRepository repository)
         {
@@ -26,6 +26,7 @@ namespace JustisBookstore.Controllers
 
         public IActionResult Index(int page = 1)
         {
+            
             return View(new BookListViewModel
             {
                 Books = _repository.Books

@@ -1,28 +1,45 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-    
+
 }
 @model BookListViewModel
 
 <div class="text-center">
     <h1 class="display-4">Welcome to Justis' Bookstore</h1>
 </div>
-<div class="nav" page-model="@Model.PagingInfo" page-action="Index"></div>
+<div page-model="@Model.PagingInfo" page-action="Index" page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true"
+     page-class-normal="btn-outline-dark"
+     page-class-selected="btn-primary"
+     page-class="btn"
+     class="btn-group pull-right m-1"></div>
 <div class="container ">
-    <div class="card">
-        @foreach (Book book in Model.Books)//displays all  Books
-        {
-        <h3 class="card-header">@book.title <br /></h3>
 
-        <p class="card-body">
-            ISBN: @book.ISBN <br />
-            Author: @book.authorFirstName @book.authorMiddleName @book.authorLastName <br />
-            Publisher: @book.publisher <br /> Classification: @book.classification <br />
-            Category: @book.category <br /> Price: $@book.price
-        </p>
+    @foreach (Book book in Model.Books)//displays all  Books
+    {
+        <div class="card">
+            <div class="card-header">
+                <h3 class="font-italic" style="float:left">@book.title </h3> <h3 style="float:left">&#160;&#160; by @book.authorFirstName @book.authorMiddleName @book.authorLastName</h3> <h3 class="" style="float:right">$@book.price</h3>
+            </div>
+            <div class="card-body" style="padding-bottom=0px;">
+                <div class="card-text" style="padding-top=0px;">
+                    <p>
 
+                        ISBN: @book.ISBN<br />
+                        Classification: @book.classification <br />
+                        Category: @book.category <br /> Pages: @book.numPages
+                    </p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <h6>Publisher: @book.publisher</h6>
+            </div>
 
-        }
-    </div>
+        </div>
+    }
+
 </div>
-<div class="nav" page-model="@Model.PagingInfo" page-action="Index"></div>
+<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true"
+     page-class-normal="btn-outline-dark"
+     page-class-selected="btn-primary"
+     page-class="btn"
+     class="btn-group pull-right m-1"></div>

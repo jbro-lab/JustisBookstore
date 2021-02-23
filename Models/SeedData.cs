@@ -33,7 +33,8 @@ namespace JustisBookstore.Models
                         publisher = "Signet",
                         classification = "Fiction",
                         category = "Classic",
-                        price = 9.95
+                        price = 9.95,
+                        numPages = 1488
                     },
 
                     new Book
@@ -46,7 +47,8 @@ namespace JustisBookstore.Models
                         publisher = "Simon & Schuster",
                         classification = "Non-Fiction",
                         category = "Biography",
-                        price = 14.58
+                        price = 14.58,
+                        numPages = 944 
                     },
 
                      new Book
@@ -58,7 +60,8 @@ namespace JustisBookstore.Models
                          publisher = "Bantam",
                          classification = "Non-Fiction",
                          category = "Biography",
-                         price = 21.54
+                         price = 21.54,
+                         numPages = 832
                      },
 
                       new Book
@@ -71,7 +74,8 @@ namespace JustisBookstore.Models
                           publisher = "Random House",
                           classification = "Non-Fiction",
                           category = "Biography",
-                          price = 11.61
+                          price = 11.61,
+                          numPages = 864
                       },
 
                        new Book
@@ -83,7 +87,8 @@ namespace JustisBookstore.Models
                            publisher = "Simon & Schuster",
                            classification = "Non-Fiction",
                            category = "Historical",
-                           price = 13.33
+                           price = 13.33,
+                           numPages = 528
                        },
 
                         new Book
@@ -95,7 +100,8 @@ namespace JustisBookstore.Models
                             publisher = "Vintage",
                             classification = "Fiction",
                             category = "Historical Fiction",
-                            price = 15.95
+                            price = 15.95,
+                            numPages = 288
                         },
 
                         new Book
@@ -107,7 +113,8 @@ namespace JustisBookstore.Models
                             publisher = "Grand Central Publishing",
                             classification = "Non-Fiction",
                             category = "Self-Help",
-                            price = 14.99
+                            price = 14.99,
+                            numPages = 304
                         },
 
                         new Book
@@ -119,7 +126,8 @@ namespace JustisBookstore.Models
                             publisher = "Grand Central Publishing",
                             classification = "Non-Fiction",
                             category = "Self-Help",
-                            price = 21.66
+                            price = 21.66,
+                            numPages = 240
                         },
 
                         new Book
@@ -131,7 +139,8 @@ namespace JustisBookstore.Models
                             publisher = "Portfolio",
                             classification = "Non-Fiction",
                             category = "Business",
-                            price = 29.16
+                            price = 29.16,
+                            numPages = 400
                         },
 
                         new Book
@@ -143,8 +152,51 @@ namespace JustisBookstore.Models
                             publisher = "Bantam",
                             classification = "Fiction",
                             category = "Thriller",
-                            price = 15.03
+                            price = 15.03,
+                            numPages = 642
+                        },
+
+                        new Book
+                        {
+                            ISBN = "978-1508483113",
+                            title = "Up From Slavery",
+                            authorFirstName = "Booker",
+                            authorMiddleName = "T.",
+                            authorLastName = "Washington",
+                            publisher = "The Outlook",
+                            classification = "Non-Fiction",
+                            category = "Biography",
+                            price = 6.89,
+                            numPages = 130
+                        },
+
+                        new Book
+                        {
+                            ISBN = "978-1508483113",
+                            title = "Black Hawk Down",
+                            authorFirstName = "Mark",
+                            authorLastName = "Bowden",
+                            publisher = "Grove Press",
+                            classification = "Non-Fiction",
+                            category = "History",
+                            price = 13.33,
+                            numPages = 400
+                        },
+
+                        new Book
+                        {
+                            ISBN = "978-1250105219",
+                            title = "Killing Lincoln",
+                            authorFirstName = "Bill",
+                            authorLastName = "O'Reilly",
+                            publisher = "Holt Paperbacks",
+                            classification = "Non-Fiction",
+                            category = "History",
+                            price = 9.99,
+                            numPages = 416
                         }
+
+
                 );
 
                 context.SaveChanges();
