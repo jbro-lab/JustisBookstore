@@ -26,7 +26,7 @@ namespace JustisBookstore.Controllers
 
         public IActionResult Index(int page = 1)
         {
-            
+            //returns index view includes pagination
             return View(new BookListViewModel
             {
                 Books = _repository.Books

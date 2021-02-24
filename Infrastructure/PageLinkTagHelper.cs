@@ -10,7 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace JustisBookstore.Infrastructure
-{
+{//used for creating tag helpers to div 
     [HtmlTargetElement("div", Attributes = "page-model")]
     public class PageLinkTagHelper : TagHelper
     {
@@ -34,7 +34,7 @@ namespace JustisBookstore.Infrastructure
         public string PageClassNormal { get; set; }
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
-        {
+        {//enables us to build a tags dynamically
             IUrlHelper urlHelper = urlHelperFactory.GetUrlHelper(ViewContext);
 
             TagBuilder result = new TagBuilder("div");
