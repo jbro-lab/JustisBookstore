@@ -24,12 +24,13 @@ namespace JustisBookstore.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(string category, int page = 1)
         {
             //returns index view includes pagination
             return View(new BookListViewModel
             {
                 Books = _repository.Books
+                    .Where(p => category == null || p.category == category)
                     .OrderBy(p => p.BookId)
                     .Skip((page - 1) * PageSize)
                     .Take(PageSize),
@@ -38,9 +39,11 @@ namespace JustisBookstore.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalNumItems = _repository.Books.Count()
-                }
-            });
+                    TotalNumItems = category == null ? _repository.Books.Count() :
+                    _repository.Books.Where(book => book.category == category).Count()//returns only the num pages it needs
+                },
+                CurrentCategory = category
+            }) ;
                 
                 
                 

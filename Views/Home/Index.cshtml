@@ -16,28 +16,7 @@
 
     @foreach (Book book in Model.Books)//displays all  Books
     {
-        <div class="card">
-            <div class="card-header">
-                <!--here's one example of using bootstrap I've never used class font-italic-->
-                <h3 class="font-italic" style="float:left">@book.title </h3> <h3 style="float:left">&#160;&#160; by @book.authorFirstName @book.authorMiddleName @book.authorLastName</h3> <h3 class="" style="float:right">$@book.price</h3>
-            </div>
-            <div class="card-body" style="padding-bottom=0px;">
-                <!--I've also never used card-text before-->
-                <div class="card-text" style="padding-top=0px;">
-                    <p>
-
-                        ISBN: @book.ISBN<br />
-                        Classification: @book.classification <br />
-                        Category: @book.category <br /> Pages: @book.numPages
-                    </p>
-                </div>
-            </div>
-            <!--I've also never used card footer-->
-            <div class="card-footer">
-                <h6>Publisher: @book.publisher</h6>
-            </div>
-
-        </div>
+        <partial name="BookSummary" model="book"/>
     }
 
 </div>
@@ -45,4 +24,5 @@
      page-class-normal="btn-outline-dark"
      page-class-selected="btn-primary"
      page-class="btn"
+     page-url-category="@Model.CurrentCategory"
      class="btn-group pull-right m-1"></div>
