@@ -68,6 +68,11 @@ namespace JustisBookstore
                     "{category}",
                     new { Controller = "Home", action = "Index", page = 1 });
 
+
+                endpoints.MapControllerRoute("BooksCategory",
+                    "Books/{category}",
+                    new { Controller = "Home", action = "Index"});
+
                 endpoints.MapControllerRoute(
                     "pagination", 
                     "Books/{page}",
