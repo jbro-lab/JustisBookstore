@@ -1,4 +1,5 @@
 ﻿<!--Justis Brown-->
+<!--layout for cart razor page-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +9,12 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="~/lib/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
-   
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 </head>
 <body>
-    <header><!--Navbar-->
+    <header>
+        <!--Navbar-->
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Justis' Bookstore</a>
@@ -22,18 +25,15 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <!--virtual controller, all categories listed here-->
-                        <vc:navigation-menu />
-                        <vc:cart-summary />  
-                    </ul>
-                    
                         
-                    
+                       
+                    </ul>
                 </div>
             </div>
         </nav>
     </header>
     <div class="container">
-        
+
         <!--Render Body Here-->
         <main role="main" class="pb-3">
             @RenderBody()

@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using JustisBookstore.Models.ViewModels;
+using JustisBookstore.Components;
 
 namespace JustisBookstore.Controllers
 {
@@ -24,7 +25,7 @@ namespace JustisBookstore.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(string category, int page = 1)
+        public IActionResult Index(string category, int pageNum = 1)
         {
             //returns index view includes pagination
             return View(new BookListViewModel
@@ -32,18 +33,19 @@ namespace JustisBookstore.Controllers
                 Books = _repository.Books
                     .Where(p => category == null || p.category == category)
                     .OrderBy(p => p.BookId)
-                    .Skip((page - 1) * PageSize)
+                    .Skip((pageNum - 1) * PageSize)
                     .Take(PageSize),
 
                 PagingInfo = new PagingInfo
                 {
-                    CurrentPage = page,
+                    CurrentPage = pageNum,
                     ItemsPerPage = PageSize,
                     TotalNumItems = category == null ? _repository.Books.Count() :
                     _repository.Books.Where(book => book.category == category).Count()//returns only the num pages it needs
                 },
                 CurrentCategory = category
-            }) ;
+            }
+           ) ;
                 
                 
                 

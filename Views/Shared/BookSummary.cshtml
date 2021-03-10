@@ -9,9 +9,9 @@
         <!--here's one example of using bootstrap I've never used class font-italic-->
         <h3 class="font-italic" style="float:left">@Model.title </h3> <h3 style="float:left">&#160;&#160; by @Model.authorFirstName @Model.authorMiddleName @Model.authorLastName</h3> <h3 class="" style="float:right">$@Model.price</h3>
     </div>
-    <div class="card-body" style="padding-bottom=0px;">
+    <div class="card-body" style="padding-bottom:0px;">
         <!--I've also never used card-text before-->
-        <div class="card-text" style="padding-top=0px;">
+        <div class="card-text" style="padding-top:0px;">
             <p>
 
                 ISBN: @Model.ISBN<br />
@@ -20,9 +20,21 @@
             </p>
         </div>
     </div>
+    <form id="@Model.BookId" asp-page="/Buy" method="post">
+        <input type="hidden" asp-for="BookId" />
+        <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+        <span class="card-text">
+            @Model.title
+            <button type="submit" class="btn-success" style="float:right;">Buy</button>
+        </span>
+
+    </form>
     <!--I've also never used card footer-->
     <div class="card-footer">
         <h6>Publisher: @Model.publisher</h6>
     </div>
+
+
+   
 
 </div>
